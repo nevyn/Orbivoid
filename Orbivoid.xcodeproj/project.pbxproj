@@ -17,7 +17,7 @@
 		05DF1EFA17CD2CAE00E3B321 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1EF817CD2CAE00E3B321 /* Main_iPhone.storyboard */; };
 		05DF1EFD17CD2CAE00E3B321 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1EFB17CD2CAE00E3B321 /* Main_iPad.storyboard */; };
 		05DF1F0017CD2CAE00E3B321 /* ORBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */; };
-		05DF1F0317CD2CAE00E3B321 /* ORBMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */; };
+		05DF1F0317CD2CAE00E3B321 /* ORBGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */; };
 		05DF1F0717CD2CAE00E3B321 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F0617CD2CAE00E3B321 /* Images.xcassets */; };
 		05DF1F0E17CD2CAE00E3B321 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1F0D17CD2CAE00E3B321 /* XCTest.framework */; };
 		05DF1F0F17CD2CAE00E3B321 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE417CD2CAD00E3B321 /* Foundation.framework */; };
@@ -28,6 +28,7 @@
 		05DF1F2617CD338E00E3B321 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2417CD338E00E3B321 /* spark.png */; };
 		05DF1F2A17CD389300E3B321 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2817CD389300E3B321 /* bokeh.png */; };
 		05DF1F2C17CD39AB00E3B321 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2B17CD39AB00E3B321 /* Background.sks */; };
+		05DF1F2E17CD3BFC00E3B321 /* Spawn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2D17CD3BFC00E3B321 /* Spawn.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +57,8 @@
 		05DF1EFC17CD2CAE00E3B321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		05DF1EFE17CD2CAE00E3B321 /* ORBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORBViewController.h; sourceTree = "<group>"; };
 		05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBViewController.m; sourceTree = "<group>"; };
-		05DF1F0117CD2CAE00E3B321 /* ORBMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORBMyScene.h; sourceTree = "<group>"; };
-		05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBMyScene.m; sourceTree = "<group>"; };
+		05DF1F0117CD2CAE00E3B321 /* ORBGameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORBGameScene.h; sourceTree = "<group>"; };
+		05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBGameScene.m; sourceTree = "<group>"; };
 		05DF1F0617CD2CAE00E3B321 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05DF1F0C17CD2CAE00E3B321 /* OrbivoidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbivoidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DF1F0D17CD2CAE00E3B321 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -68,6 +69,7 @@
 		05DF1F2417CD338E00E3B321 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		05DF1F2817CD389300E3B321 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
 		05DF1F2B17CD39AB00E3B321 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
+		05DF1F2D17CD3BFC00E3B321 /* Spawn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Spawn.wav; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,12 +137,13 @@
 				05DF1EFB17CD2CAE00E3B321 /* Main_iPad.storyboard */,
 				05DF1EFE17CD2CAE00E3B321 /* ORBViewController.h */,
 				05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */,
-				05DF1F0117CD2CAE00E3B321 /* ORBMyScene.h */,
-				05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */,
+				05DF1F0117CD2CAE00E3B321 /* ORBGameScene.h */,
+				05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */,
 				05DF1F2317CD338E00E3B321 /* Trail.sks */,
 				05DF1F2417CD338E00E3B321 /* spark.png */,
 				05DF1F2817CD389300E3B321 /* bokeh.png */,
 				05DF1F2B17CD39AB00E3B321 /* Background.sks */,
+				05DF1F2D17CD3BFC00E3B321 /* Spawn.wav */,
 				05DF1F0617CD2CAE00E3B321 /* Images.xcassets */,
 				05DF1EED17CD2CAE00E3B321 /* Supporting Files */,
 			);
@@ -261,6 +264,7 @@
 				05DF1F2C17CD39AB00E3B321 /* Background.sks in Resources */,
 				05DF1EFA17CD2CAE00E3B321 /* Main_iPhone.storyboard in Resources */,
 				05DF1EF117CD2CAE00E3B321 /* InfoPlist.strings in Resources */,
+				05DF1F2E17CD3BFC00E3B321 /* Spawn.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +285,7 @@
 			files = (
 				05DF1F0017CD2CAE00E3B321 /* ORBViewController.m in Sources */,
 				05DF1EF717CD2CAE00E3B321 /* ORBAppDelegate.m in Sources */,
-				05DF1F0317CD2CAE00E3B321 /* ORBMyScene.m in Sources */,
+				05DF1F0317CD2CAE00E3B321 /* ORBGameScene.m in Sources */,
 				05DF1EF317CD2CAE00E3B321 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +501,7 @@
 				05DF1F1F17CD2CAE00E3B321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05DF1F2017CD2CAE00E3B321 /* Build configuration list for PBXNativeTarget "OrbivoidTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +510,7 @@
 				05DF1F2217CD2CAE00E3B321 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

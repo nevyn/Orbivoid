@@ -8,6 +8,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface ORBMyScene : SKScene
+@interface ORBGameScene : SKScene
 
 @end
