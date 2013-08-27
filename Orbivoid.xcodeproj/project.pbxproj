@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05DF1EE517CD2CAD00E3B321 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE417CD2CAD00E3B321 /* Foundation.framework */; };
+		05DF1EE717CD2CAD00E3B321 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE617CD2CAD00E3B321 /* CoreGraphics.framework */; };
+		05DF1EE917CD2CAD00E3B321 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE817CD2CAD00E3B321 /* UIKit.framework */; };
+		05DF1EEB17CD2CAD00E3B321 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EEA17CD2CAD00E3B321 /* SpriteKit.framework */; };
+		05DF1EF117CD2CAE00E3B321 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1EEF17CD2CAE00E3B321 /* InfoPlist.strings */; };
+		05DF1EF317CD2CAE00E3B321 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1EF217CD2CAE00E3B321 /* main.m */; };
+		05DF1EF717CD2CAE00E3B321 /* ORBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1EF617CD2CAE00E3B321 /* ORBAppDelegate.m */; };
+		05DF1EFA17CD2CAE00E3B321 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1EF817CD2CAE00E3B321 /* Main_iPhone.storyboard */; };
+		05DF1EFD17CD2CAE00E3B321 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1EFB17CD2CAE00E3B321 /* Main_iPad.storyboard */; };
+		05DF1F0017CD2CAE00E3B321 /* ORBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */; };
+		05DF1F0317CD2CAE00E3B321 /* ORBMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */; };
+		05DF1F0517CD2CAE00E3B321 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F0417CD2CAE00E3B321 /* Spaceship.png */; };
+		05DF1F0717CD2CAE00E3B321 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F0617CD2CAE00E3B321 /* Images.xcassets */; };
+		05DF1F0E17CD2CAE00E3B321 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1F0D17CD2CAE00E3B321 /* XCTest.framework */; };
+		05DF1F0F17CD2CAE00E3B321 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE417CD2CAD00E3B321 /* Foundation.framework */; };
+		05DF1F1017CD2CAE00E3B321 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE817CD2CAD00E3B321 /* UIKit.framework */; };
+		05DF1F1817CD2CAE00E3B321 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F1617CD2CAE00E3B321 /* InfoPlist.strings */; };
+		05DF1F1A17CD2CAE00E3B321 /* OrbivoidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1F1917CD2CAE00E3B321 /* OrbivoidTests.m */; };
+		05DF1F2517CD338E00E3B321 /* Trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2317CD338E00E3B321 /* Trail.sks */; };
+		05DF1F2617CD338E00E3B321 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2417CD338E00E3B321 /* spark.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05DF1F1117CD2CAE00E3B321 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05DF1ED917CD2CAD00E3B321 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05DF1EE017CD2CAD00E3B321;
+			remoteInfo = Orbivoid;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05DF1EE117CD2CAD00E3B321 /* Orbivoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbivoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05DF1EE417CD2CAD00E3B321 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		05DF1EE617CD2CAD00E3B321 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		05DF1EE817CD2CAD00E3B321 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		05DF1EEA17CD2CAD00E3B321 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		05DF1EEE17CD2CAE00E3B321 /* Orbivoid-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Orbivoid-Info.plist"; sourceTree = "<group>"; };
+		05DF1EF017CD2CAE00E3B321 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05DF1EF217CD2CAE00E3B321 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		05DF1EF417CD2CAE00E3B321 /* Orbivoid-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Orbivoid-Prefix.pch"; sourceTree = "<group>"; };
+		05DF1EF517CD2CAE00E3B321 /* ORBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORBAppDelegate.h; sourceTree = "<group>"; };
+		05DF1EF617CD2CAE00E3B321 /* ORBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBAppDelegate.m; sourceTree = "<group>"; };
+		05DF1EF917CD2CAE00E3B321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		05DF1EFC17CD2CAE00E3B321 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		05DF1EFE17CD2CAE00E3B321 /* ORBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORBViewController.h; sourceTree = "<group>"; };
+		05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBViewController.m; sourceTree = "<group>"; };
+		05DF1F0117CD2CAE00E3B321 /* ORBMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORBMyScene.h; sourceTree = "<group>"; };
+		05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBMyScene.m; sourceTree = "<group>"; };
+		05DF1F0417CD2CAE00E3B321 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		05DF1F0617CD2CAE00E3B321 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		05DF1F0C17CD2CAE00E3B321 /* OrbivoidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbivoidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05DF1F0D17CD2CAE00E3B321 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		05DF1F1517CD2CAE00E3B321 /* OrbivoidTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OrbivoidTests-Info.plist"; sourceTree = "<group>"; };
+		05DF1F1717CD2CAE00E3B321 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05DF1F1917CD2CAE00E3B321 /* OrbivoidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrbivoidTests.m; sourceTree = "<group>"; };
+		05DF1F2317CD338E00E3B321 /* Trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail.sks; sourceTree = "<group>"; };
+		05DF1F2417CD338E00E3B321 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05DF1EDE17CD2CAD00E3B321 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DF1EE717CD2CAD00E3B321 /* CoreGraphics.framework in Frameworks */,
+				05DF1EE917CD2CAD00E3B321 /* UIKit.framework in Frameworks */,
+				05DF1EEB17CD2CAD00E3B321 /* SpriteKit.framework in Frameworks */,
+				05DF1EE517CD2CAD00E3B321 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05DF1F0917CD2CAE00E3B321 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DF1F0E17CD2CAE00E3B321 /* XCTest.framework in Frameworks */,
+				05DF1F1017CD2CAE00E3B321 /* UIKit.framework in Frameworks */,
+				05DF1F0F17CD2CAE00E3B321 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05DF1ED817CD2CAD00E3B321 = {
+			isa = PBXGroup;
+			children = (
+				05DF1EEC17CD2CAE00E3B321 /* Orbivoid */,
+				05DF1F1317CD2CAE00E3B321 /* OrbivoidTests */,
+				05DF1EE317CD2CAD00E3B321 /* Frameworks */,
+				05DF1EE217CD2CAD00E3B321 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05DF1EE217CD2CAD00E3B321 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05DF1EE117CD2CAD00E3B321 /* Orbivoid.app */,
+				05DF1F0C17CD2CAE00E3B321 /* OrbivoidTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05DF1EE317CD2CAD00E3B321 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05DF1EE417CD2CAD00E3B321 /* Foundation.framework */,
+				05DF1EE617CD2CAD00E3B321 /* CoreGraphics.framework */,
+				05DF1EE817CD2CAD00E3B321 /* UIKit.framework */,
+				05DF1EEA17CD2CAD00E3B321 /* SpriteKit.framework */,
+				05DF1F0D17CD2CAE00E3B321 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05DF1EEC17CD2CAE00E3B321 /* Orbivoid */ = {
+			isa = PBXGroup;
+			children = (
+				05DF1EF517CD2CAE00E3B321 /* ORBAppDelegate.h */,
+				05DF1EF617CD2CAE00E3B321 /* ORBAppDelegate.m */,
+				05DF1EF817CD2CAE00E3B321 /* Main_iPhone.storyboard */,
+				05DF1EFB17CD2CAE00E3B321 /* Main_iPad.storyboard */,
+				05DF1EFE17CD2CAE00E3B321 /* ORBViewController.h */,
+				05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */,
+				05DF1F0117CD2CAE00E3B321 /* ORBMyScene.h */,
+				05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */,
+				05DF1F2317CD338E00E3B321 /* Trail.sks */,
+				05DF1F2417CD338E00E3B321 /* spark.png */,
+				05DF1F0417CD2CAE00E3B321 /* Spaceship.png */,
+				05DF1F0617CD2CAE00E3B321 /* Images.xcassets */,
+				05DF1EED17CD2CAE00E3B321 /* Supporting Files */,
+			);
+			path = Orbivoid;
+			sourceTree = "<group>";
+		};
+		05DF1EED17CD2CAE00E3B321 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05DF1EEE17CD2CAE00E3B321 /* Orbivoid-Info.plist */,
+				05DF1EEF17CD2CAE00E3B321 /* InfoPlist.strings */,
+				05DF1EF217CD2CAE00E3B321 /* main.m */,
+				05DF1EF417CD2CAE00E3B321 /* Orbivoid-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05DF1F1317CD2CAE00E3B321 /* OrbivoidTests */ = {
+			isa = PBXGroup;
+			children = (
+				05DF1F1917CD2CAE00E3B321 /* OrbivoidTests.m */,
+				05DF1F1417CD2CAE00E3B321 /* Supporting Files */,
+			);
+			path = OrbivoidTests;
+			sourceTree = "<group>";
+		};
+		05DF1F1417CD2CAE00E3B321 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05DF1F1517CD2CAE00E3B321 /* OrbivoidTests-Info.plist */,
+				05DF1F1617CD2CAE00E3B321 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05DF1EE017CD2CAD00E3B321 /* Orbivoid */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05DF1F1D17CD2CAE00E3B321 /* Build configuration list for PBXNativeTarget "Orbivoid" */;
+			buildPhases = (
+				05DF1EDD17CD2CAD00E3B321 /* Sources */,
+				05DF1EDE17CD2CAD00E3B321 /* Frameworks */,
+				05DF1EDF17CD2CAD00E3B321 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Orbivoid;
+			productName = Orbivoid;
+			productReference = 05DF1EE117CD2CAD00E3B321 /* Orbivoid.app */;
+			productType = "com.apple.product-type.application";
+		};
+		05DF1F0B17CD2CAE00E3B321 /* OrbivoidTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05DF1F2017CD2CAE00E3B321 /* Build configuration list for PBXNativeTarget "OrbivoidTests" */;
+			buildPhases = (
+				05DF1F0817CD2CAE00E3B321 /* Sources */,
+				05DF1F0917CD2CAE00E3B321 /* Frameworks */,
+				05DF1F0A17CD2CAE00E3B321 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05DF1F1217CD2CAE00E3B321 /* PBXTargetDependency */,
+			);
+			name = OrbivoidTests;
+			productName = OrbivoidTests;
+			productReference = 05DF1F0C17CD2CAE00E3B321 /* OrbivoidTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05DF1ED917CD2CAD00E3B321 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ORB;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Neto;
+				TargetAttributes = {
+					05DF1F0B17CD2CAE00E3B321 = {
+						TestTargetID = 05DF1EE017CD2CAD00E3B321;
+					};
+				};
+			};
+			buildConfigurationList = 05DF1EDC17CD2CAD00E3B321 /* Build configuration list for PBXProject "Orbivoid" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 05DF1ED817CD2CAD00E3B321;
+			productRefGroup = 05DF1EE217CD2CAD00E3B321 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05DF1EE017CD2CAD00E3B321 /* Orbivoid */,
+				05DF1F0B17CD2CAE00E3B321 /* OrbivoidTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05DF1EDF17CD2CAD00E3B321 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DF1F2517CD338E00E3B321 /* Trail.sks in Resources */,
+				05DF1F0517CD2CAE00E3B321 /* Spaceship.png in Resources */,
+				05DF1F0717CD2CAE00E3B321 /* Images.xcassets in Resources */,
+				05DF1F2617CD338E00E3B321 /* spark.png in Resources */,
+				05DF1EFD17CD2CAE00E3B321 /* Main_iPad.storyboard in Resources */,
+				05DF1EFA17CD2CAE00E3B321 /* Main_iPhone.storyboard in Resources */,
+				05DF1EF117CD2CAE00E3B321 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05DF1F0A17CD2CAE00E3B321 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DF1F1817CD2CAE00E3B321 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05DF1EDD17CD2CAD00E3B321 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DF1F0017CD2CAE00E3B321 /* ORBViewController.m in Sources */,
+				05DF1EF717CD2CAE00E3B321 /* ORBAppDelegate.m in Sources */,
+				05DF1F0317CD2CAE00E3B321 /* ORBMyScene.m in Sources */,
+				05DF1EF317CD2CAE00E3B321 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05DF1F0817CD2CAE00E3B321 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05DF1F1A17CD2CAE00E3B321 /* OrbivoidTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05DF1F1217CD2CAE00E3B321 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05DF1EE017CD2CAD00E3B321 /* Orbivoid */;
+			targetProxy = 05DF1F1117CD2CAE00E3B321 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		05DF1EEF17CD2CAE00E3B321 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05DF1EF017CD2CAE00E3B321 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		05DF1EF817CD2CAE00E3B321 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05DF1EF917CD2CAE00E3B321 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		05DF1EFB17CD2CAE00E3B321 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05DF1EFC17CD2CAE00E3B321 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		05DF1F1617CD2CAE00E3B321 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05DF1F1717CD2CAE00E3B321 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05DF1F1B17CD2CAE00E3B321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05DF1F1C17CD2CAE00E3B321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05DF1F1E17CD2CAE00E3B321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Orbivoid/Orbivoid-Prefix.pch";
+				INFOPLIST_FILE = "Orbivoid/Orbivoid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		05DF1F1F17CD2CAE00E3B321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Orbivoid/Orbivoid-Prefix.pch";
+				INFOPLIST_FILE = "Orbivoid/Orbivoid-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		05DF1F2117CD2CAE00E3B321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Orbivoid.app/Orbivoid";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Orbivoid/Orbivoid-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "OrbivoidTests/OrbivoidTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		05DF1F2217CD2CAE00E3B321 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Orbivoid.app/Orbivoid";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Orbivoid/Orbivoid-Prefix.pch";
+				INFOPLIST_FILE = "OrbivoidTests/OrbivoidTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05DF1EDC17CD2CAD00E3B321 /* Build configuration list for PBXProject "Orbivoid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05DF1F1B17CD2CAE00E3B321 /* Debug */,
+				05DF1F1C17CD2CAE00E3B321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05DF1F1D17CD2CAE00E3B321 /* Build configuration list for PBXNativeTarget "Orbivoid" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05DF1F1E17CD2CAE00E3B321 /* Debug */,
+				05DF1F1F17CD2CAE00E3B321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		05DF1F2017CD2CAE00E3B321 /* Build configuration list for PBXNativeTarget "OrbivoidTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05DF1F2117CD2CAE00E3B321 /* Debug */,
+				05DF1F2217CD2CAE00E3B321 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05DF1ED917CD2CAD00E3B321 /* Project object */;
+}
