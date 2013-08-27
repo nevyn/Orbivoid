@@ -42,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05B8370017CD46970059C67D /* CGVector+TC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGVector+TC.h"; sourceTree = "<group>"; };
 		05DF1EE117CD2CAD00E3B321 /* Orbivoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbivoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DF1EE417CD2CAD00E3B321 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		05DF1EE617CD2CAD00E3B321 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -139,6 +140,7 @@
 				05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */,
 				05DF1F0117CD2CAE00E3B321 /* ORBGameScene.h */,
 				05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */,
+				05B8370017CD46970059C67D /* CGVector+TC.h */,
 				05DF1F2317CD338E00E3B321 /* Trail.sks */,
 				05DF1F2417CD338E00E3B321 /* spark.png */,
 				05DF1F2817CD389300E3B321 /* bokeh.png */,

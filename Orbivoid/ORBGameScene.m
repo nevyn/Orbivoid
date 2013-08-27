@@ -7,6 +7,7 @@
 //
 
 #import "ORBGameScene.h"
+#import "CGVector+TC.h"
 
 @implementation ORBGameScene
 {
@@ -20,6 +21,7 @@
         self.backgroundColor = [SKColor blackColor];
         
         self.physicsWorld.gravity = CGPointMake(0, 0);
+        _enemies = [NSMutableArray new];
         
         _player = [SKNode node];
             SKShapeNode *circle = [SKShapeNode node];
@@ -34,6 +36,7 @@
             [_player addChild:smoke];
         
             _player.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:20];
+            _player.physicsBody.mass = 100000;
         
         SKEmitterNode *background = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Background" ofType:@"sks"]];
             background.particlePositionRange = CGVectorMake(self.size.width*2, self.size.height*2);
@@ -84,8 +87,14 @@
     
     for(SKNode *enemyNode in _enemies) {
         CGPoint enemyPos = enemyNode.position;
+        CGVector diff = TCVectorMinus(playerPos, enemyPos);
+        CGVector unit = TCVectorUnit(diff);
+        CGVector force = TCVectorMultiply(unit, 100);
         
+        [enemyNode.physicsBody applyForce:force];
     }
+    
+    _player.physicsBody.velocity = CGVectorMake(0, 0);
 }
 
 @end
