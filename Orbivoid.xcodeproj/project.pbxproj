@@ -18,7 +18,6 @@
 		05DF1EFD17CD2CAE00E3B321 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1EFB17CD2CAE00E3B321 /* Main_iPad.storyboard */; };
 		05DF1F0017CD2CAE00E3B321 /* ORBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */; };
 		05DF1F0317CD2CAE00E3B321 /* ORBMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */; };
-		05DF1F0517CD2CAE00E3B321 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F0417CD2CAE00E3B321 /* Spaceship.png */; };
 		05DF1F0717CD2CAE00E3B321 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F0617CD2CAE00E3B321 /* Images.xcassets */; };
 		05DF1F0E17CD2CAE00E3B321 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1F0D17CD2CAE00E3B321 /* XCTest.framework */; };
 		05DF1F0F17CD2CAE00E3B321 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE417CD2CAD00E3B321 /* Foundation.framework */; };
@@ -27,6 +26,8 @@
 		05DF1F1A17CD2CAE00E3B321 /* OrbivoidTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05DF1F1917CD2CAE00E3B321 /* OrbivoidTests.m */; };
 		05DF1F2517CD338E00E3B321 /* Trail.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2317CD338E00E3B321 /* Trail.sks */; };
 		05DF1F2617CD338E00E3B321 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2417CD338E00E3B321 /* spark.png */; };
+		05DF1F2A17CD389300E3B321 /* bokeh.png in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2817CD389300E3B321 /* bokeh.png */; };
+		05DF1F2C17CD39AB00E3B321 /* Background.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05DF1F2B17CD39AB00E3B321 /* Background.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,6 @@
 		05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBViewController.m; sourceTree = "<group>"; };
 		05DF1F0117CD2CAE00E3B321 /* ORBMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ORBMyScene.h; sourceTree = "<group>"; };
 		05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORBMyScene.m; sourceTree = "<group>"; };
-		05DF1F0417CD2CAE00E3B321 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		05DF1F0617CD2CAE00E3B321 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05DF1F0C17CD2CAE00E3B321 /* OrbivoidTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbivoidTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DF1F0D17CD2CAE00E3B321 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -66,6 +66,8 @@
 		05DF1F1917CD2CAE00E3B321 /* OrbivoidTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrbivoidTests.m; sourceTree = "<group>"; };
 		05DF1F2317CD338E00E3B321 /* Trail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Trail.sks; sourceTree = "<group>"; };
 		05DF1F2417CD338E00E3B321 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		05DF1F2817CD389300E3B321 /* bokeh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bokeh.png; sourceTree = "<group>"; };
+		05DF1F2B17CD39AB00E3B321 /* Background.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Background.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,8 @@
 				05DF1F0217CD2CAE00E3B321 /* ORBMyScene.m */,
 				05DF1F2317CD338E00E3B321 /* Trail.sks */,
 				05DF1F2417CD338E00E3B321 /* spark.png */,
-				05DF1F0417CD2CAE00E3B321 /* Spaceship.png */,
+				05DF1F2817CD389300E3B321 /* bokeh.png */,
+				05DF1F2B17CD39AB00E3B321 /* Background.sks */,
 				05DF1F0617CD2CAE00E3B321 /* Images.xcassets */,
 				05DF1EED17CD2CAE00E3B321 /* Supporting Files */,
 			);
@@ -251,10 +254,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				05DF1F2517CD338E00E3B321 /* Trail.sks in Resources */,
-				05DF1F0517CD2CAE00E3B321 /* Spaceship.png in Resources */,
+				05DF1F2A17CD389300E3B321 /* bokeh.png in Resources */,
 				05DF1F0717CD2CAE00E3B321 /* Images.xcassets in Resources */,
 				05DF1F2617CD338E00E3B321 /* spark.png in Resources */,
 				05DF1EFD17CD2CAE00E3B321 /* Main_iPad.storyboard in Resources */,
+				05DF1F2C17CD39AB00E3B321 /* Background.sks in Resources */,
 				05DF1EFA17CD2CAE00E3B321 /* Main_iPhone.storyboard in Resources */,
 				05DF1EF117CD2CAE00E3B321 /* InfoPlist.strings in Resources */,
 			);

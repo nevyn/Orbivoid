@@ -17,7 +17,7 @@
 -(id)initWithSize:(CGSize)size {    
     if (self = [super initWithSize:size]) {
         
-        self.backgroundColor = [SKColor colorWithRed:.8 green:.8 blue:.8 alpha:1];
+        self.backgroundColor = [SKColor blackColor];
         
         _player = [SKNode node];
             SKShapeNode *circle = [SKShapeNode node];
@@ -28,9 +28,13 @@
         
             SKEmitterNode *smoke = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Trail" ofType:@"sks"]];
             smoke.targetNode = self;
+            smoke.position = CGPointMake(CGRectGetMidX(circle.frame), CGRectGetMidY(circle.frame));
             [_player addChild:smoke];
-            [_player addChild:circle];
         
+        SKEmitterNode *background = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Background" ofType:@"sks"]];
+            background.particlePositionRange = CGVectorMake(self.size.width*2, self.size.height*2);
+        
+        [self addChild:background];
         [self addChild:_player];
     }
     return self;
@@ -43,7 +47,7 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    [_player runAction:[SKAction moveTo:[[touches anyObject] locationInNode:self] duration:0.1]];
+    [_player runAction:[SKAction moveTo:[[touches anyObject] locationInNode:self] duration:0.01]];
 }
 
 -(void)update:(CFTimeInterval)currentTime {
