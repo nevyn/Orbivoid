@@ -159,15 +159,22 @@ enum {
     for(SKNode *enemyNode in _enemies) {
         CGPoint enemyPos = enemyNode.position;
         
-        /* Inversely proportional speed: */
+        /* Uniform speed: */
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
-        CGVector invDiff = TCVectorMultiply(diff, 1/TCVectorLength(diff));
-        CGVector force = TCVectorMultiply(invDiff, 4);
+        CGVector normalized = TCVectorUnit(diff);
+        CGVector force = TCVectorMultiply(normalized, 4);
         
-        /* Uniform speed:
+        /* Inversely proportional:
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
-        CGVector unit = TCVectorUnit(diff);
-        CGVector force = TCVectorMultiply(unit, 50);*/
+        CGVector normalized = TCVectorUnit(diff);
+        CGVector force = TCVectorMultiply(normalized, 1/sqrt(TCVectorLength(diff))*40);
+        */
+        
+        /* Inverse square root
+        CGVector diff = TCVectorMinus(playerPos, enemyPos);
+        CGVector normalized = TCVectorUnit(diff);
+        CGVector force = TCVectorMultiply(normalized, 1/sqrt(TCVectorLength(diff))*40);
+        */
         
         [enemyNode.physicsBody applyForce:force];
     }
