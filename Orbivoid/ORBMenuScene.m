@@ -45,6 +45,6 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     ORBGameScene *game = [[ORBGameScene alloc] initWithSize:self.size];
-    [self.view presentScene:game transition:[SKTransition doorsOpenHorizontalWithDuration:1]];
+    [self.view presentScene:game transition:[SKTransition doorsOpenHorizontalWithDuration:0.5]];
 }
 @end
