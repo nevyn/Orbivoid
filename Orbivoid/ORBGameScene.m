@@ -85,16 +85,18 @@ enum {
             [SKColor colorWithHue:0.1 saturation:.5 brightness:1 alpha:1],
             [SKColor redColor],
         ] times:@[@0, @0.02, @0.2]];
+        trail.particleScale /= 2;
         trail.position = CGPointMake(10, 10);
         [enemy addChild:trail];
-        enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
     
         CGFloat radius = MAX(self.size.height, self.size.width)/2;
         CGFloat angle = (arc4random_uniform(1000)/1000.) * M_PI*2;
         CGPoint p = CGPointMake(cos(angle)*radius, sin(angle)*radius);
         enemy.position = CGPointMake(self.size.width/2 + p.x, self.size.width/2 + p.y);
     
+        enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:6];
         enemy.physicsBody.categoryBitMask = CollisionEnemy;
+        enemy.physicsBody.allowsRotation = NO;
     
     [_enemies addObject:enemy];
     [self addChild:enemy];
@@ -160,7 +162,7 @@ enum {
         /* Inversely proportional speed: */
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
         CGVector invDiff = TCVectorMultiply(diff, 1/TCVectorLength(diff));
-        CGVector force = TCVectorMultiply(invDiff, 8);
+        CGVector force = TCVectorMultiply(invDiff, 4);
         
         /* Uniform speed:
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
