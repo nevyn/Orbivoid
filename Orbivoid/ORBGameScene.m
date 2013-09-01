@@ -7,12 +7,24 @@
 //
 
 #import "ORBGameScene.h"
+#import "ORBMenuScene.h"
 #import "CGVector+TC.h"
+
+enum {
+    CollisionPlayer = 1<<1,
+    CollisionEnemy = 1<<2,
+};
+
+
+
+@interface ORBGameScene () <SKPhysicsContactDelegate>
+@end
 
 @implementation ORBGameScene
 {
     SKNode *_player;
     NSMutableArray *_enemies;
+    BOOL _dead;
 }
 
 -(id)initWithSize:(CGSize)size {    
@@ -21,6 +33,8 @@
         self.backgroundColor = [SKColor blackColor];
         
         self.physicsWorld.gravity = CGPointMake(0, 0);
+        self.physicsWorld.contactDelegate = self;
+        
         _enemies = [NSMutableArray new];
         
         _player = [SKNode node];
@@ -30,48 +44,74 @@
             circle.strokeColor = [UIColor blueColor];
             circle.glowWidth = 5;
         
-            SKEmitterNode *smoke = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Trail" ofType:@"sks"]];
+            SKEmitterNode *smoke = [SKEmitterNode orb_emitterNamed:@"Trail"];
             smoke.targetNode = self;
             smoke.position = CGPointMake(CGRectGetMidX(circle.frame), CGRectGetMidY(circle.frame));
             [_player addChild:smoke];
         
             _player.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
             _player.physicsBody.mass = 100000;
+            _player.physicsBody.categoryBitMask = CollisionPlayer;
+            _player.physicsBody.contactTestBitMask = CollisionEnemy;
         
-        SKEmitterNode *background = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Background" ofType:@"sks"]];
+            _player.position = CGPointMake(size.width/2, size.height/2);
+        
+        SKEmitterNode *background = [SKEmitterNode orb_emitterNamed:@"Background"];
             background.particlePositionRange = CGVectorMake(self.size.width*2, self.size.height*2);
+            [background advanceSimulationTime:10];
         
         [self addChild:background];
         [self addChild:_player];
         
         [self runAction:[SKAction group:@[
-            [SKAction waitForDuration:1.0],
+/*            [SKAction spawnPlayer] => spawn animation, then add player to world,*/
+            [SKAction waitForDuration:2.0],
             [SKAction performSelector:@selector(spawnEnemy) onTarget:self]
         ]]];
     }
     return self;
 }
 
-- (void)die
+- (void)dieFrom:(SKNode*)killingEnemy
 {
-/*    [_player runAction:[SKAction sequence:@[
-        self explosion,
-        play sound,
-        transition to menu scene
-    ]]];*/
+    _dead = YES;
+    
+    SKEmitterNode *explosion = [SKEmitterNode orb_emitterNamed:@"Explosion"];
+    explosion.position = _player.position;
+    [self addChild:explosion];
+    [explosion runAction:[SKAction sequence:@[
+        [SKAction playSoundFileNamed:@"Explosion.wav" waitForCompletion:NO],
+		[SKAction waitForDuration:0.4],
+        [SKAction runBlock:^{
+            // TODO: Remove these more nicely
+            [killingEnemy removeFromParent];
+            [_player removeFromParent];
+        }],
+		[SKAction waitForDuration:0.4],
+		[SKAction runBlock:^{
+			explosion.particleBirthRate = 0;
+		}],
+		[SKAction waitForDuration:1.2],
+        
+        [SKAction runBlock:^{
+            ORBMenuScene *menu = [[ORBMenuScene alloc] initWithSize:self.size];
+            [self.view presentScene:menu transition:[SKTransition doorsCloseHorizontalWithDuration:1]];
+        }],
+	]]];
 }
 
 - (void)spawnEnemy
 {
     SKNode *enemy = [SKNode node];
     
-        SKEmitterNode *smoke = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Trail" ofType:@"sks"]];
+        SKEmitterNode *smoke = [SKEmitterNode orb_emitterNamed:@"Trail"];
         smoke.targetNode = self;
         smoke.particleColor = [UIColor redColor];
         smoke.position = CGPointMake(10, 10);
         [enemy addChild:smoke];
         enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
         enemy.position = CGPointMake(100, 100);
+        enemy.physicsBody.categoryBitMask = CollisionEnemy;
     
     [_enemies addObject:enemy];
     [self addChild:enemy];
@@ -86,6 +126,9 @@
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    if(_dead)
+        return;
+    
     [_player runAction:[SKAction moveTo:[[touches anyObject] locationInNode:self] duration:0.01]];
 }
 
@@ -98,7 +141,7 @@
         CGPoint enemyPos = enemyNode.position;
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
         CGVector invDiff = TCVectorMultiply(diff, 1/TCVectorLength(diff));
-        CGVector force = TCVectorMultiply(invDiff, 10);
+        CGVector force = TCVectorMultiply(invDiff, 4);
         
         [enemyNode.physicsBody applyForce:force];
     }
@@ -106,4 +149,18 @@
     _player.physicsBody.velocity = CGVectorMake(0, 0);
 }
 
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    [self dieFrom:contact.bodyB.node];
+    contact.bodyB.node.physicsBody = nil;
+}
+
 @end
+
+@implementation SKEmitterNode (fromFile)
++ (instancetype)orb_emitterNamed:(NSString*)name
+{
+    return [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:name ofType:@"sks"]];
+}
+@end
+

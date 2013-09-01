@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A333B417D36A1900E4BBF7 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B317D36A1900E4BBF7 /* Explosion.sks */; };
+		05A333B617D36D2200E4BBF7 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B517D36D2200E4BBF7 /* Explosion.wav */; };
+		05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */; };
 		05DF1EE517CD2CAD00E3B321 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE417CD2CAD00E3B321 /* Foundation.framework */; };
 		05DF1EE717CD2CAD00E3B321 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE617CD2CAD00E3B321 /* CoreGraphics.framework */; };
 		05DF1EE917CD2CAD00E3B321 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE817CD2CAD00E3B321 /* UIKit.framework */; };
@@ -42,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05A333B317D36A1900E4BBF7 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
+		05A333B517D36D2200E4BBF7 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = SOURCE_ROOT; };
+		05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBMenuScene.h; sourceTree = "<group>"; };
+		05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBMenuScene.m; sourceTree = "<group>"; };
 		05B8370017CD46970059C67D /* CGVector+TC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGVector+TC.h"; sourceTree = "<group>"; };
 		05DF1EE117CD2CAD00E3B321 /* Orbivoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbivoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DF1EE417CD2CAD00E3B321 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -140,12 +147,16 @@
 				05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */,
 				05DF1F0117CD2CAE00E3B321 /* ORBGameScene.h */,
 				05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */,
+				05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */,
+				05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */,
 				05B8370017CD46970059C67D /* CGVector+TC.h */,
 				05DF1F2317CD338E00E3B321 /* Trail.sks */,
 				05DF1F2417CD338E00E3B321 /* spark.png */,
 				05DF1F2817CD389300E3B321 /* bokeh.png */,
 				05DF1F2B17CD39AB00E3B321 /* Background.sks */,
+				05A333B317D36A1900E4BBF7 /* Explosion.sks */,
 				05DF1F2D17CD3BFC00E3B321 /* Spawn.wav */,
+				05A333B517D36D2200E4BBF7 /* Explosion.wav */,
 				05DF1F0617CD2CAE00E3B321 /* Images.xcassets */,
 				05DF1EED17CD2CAE00E3B321 /* Supporting Files */,
 			);
@@ -264,7 +275,9 @@
 				05DF1F2617CD338E00E3B321 /* spark.png in Resources */,
 				05DF1EFD17CD2CAE00E3B321 /* Main_iPad.storyboard in Resources */,
 				05DF1F2C17CD39AB00E3B321 /* Background.sks in Resources */,
+				05A333B617D36D2200E4BBF7 /* Explosion.wav in Resources */,
 				05DF1EFA17CD2CAE00E3B321 /* Main_iPhone.storyboard in Resources */,
+				05A333B417D36A1900E4BBF7 /* Explosion.sks in Resources */,
 				05DF1EF117CD2CAE00E3B321 /* InfoPlist.strings in Resources */,
 				05DF1F2E17CD3BFC00E3B321 /* Spawn.wav in Resources */,
 			);
@@ -289,6 +302,7 @@
 				05DF1EF717CD2CAE00E3B321 /* ORBAppDelegate.m in Sources */,
 				05DF1F0317CD2CAE00E3B321 /* ORBGameScene.m in Sources */,
 				05DF1EF317CD2CAE00E3B321 /* main.m in Sources */,
+				05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

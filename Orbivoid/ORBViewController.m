@@ -8,6 +8,7 @@
 
 #import "ORBViewController.h"
 #import "ORBGameScene.h"
+#import "ORBMenuScene.h"
 
 @implementation ORBViewController
 
@@ -21,8 +22,8 @@
     skView.showsNodeCount = YES;
     
     // Create and configure the scene.
-    SKScene * scene = [ORBGameScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    SKScene * scene = [ORBMenuScene sceneWithSize:skView.bounds.size];
+    scene.scaleMode = SKSceneScaleModeResizeFill;
     
     // Present the scene.
     [skView presentScene:scene];
