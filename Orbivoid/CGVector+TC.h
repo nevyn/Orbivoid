@@ -1,5 +1,7 @@
 #import <CoreGraphics/CGGeometry.h>
 
+static inline CGVector TCVectorMultiply(CGVector vector, CGFloat m);
+
 static inline CGVector TCVectorMinus(CGPoint p1, CGPoint p2)
 {
     return CGVectorMake(
@@ -16,7 +18,7 @@ static inline CGFloat TCVectorLength(CGVector vector)
 static inline CGVector TCVectorUnit(CGVector vector)
 {
 	CGFloat invLen = 1.0 / TCVectorLength(vector);
-	return CGVectorMake(vector.dx * invLen, vector.dy * invLen);
+	return TCVectorMultiply(vector, invLen);
 }
 
 static inline CGVector TCVectorMultiply(CGVector vector, CGFloat m)

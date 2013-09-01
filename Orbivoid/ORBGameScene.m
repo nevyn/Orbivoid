@@ -35,7 +35,7 @@
             smoke.position = CGPointMake(CGRectGetMidX(circle.frame), CGRectGetMidY(circle.frame));
             [_player addChild:smoke];
         
-            _player.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:20];
+            _player.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
             _player.physicsBody.mass = 100000;
         
         SKEmitterNode *background = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Background" ofType:@"sks"]];
@@ -52,10 +52,17 @@
     return self;
 }
 
+- (void)die
+{
+/*    [_player runAction:[SKAction sequence:@[
+        self explosion,
+        play sound,
+        transition to menu scene
+    ]]];*/
+}
+
 - (void)spawnEnemy
 {
-    [SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO];
-    
     SKNode *enemy = [SKNode node];
     
         SKEmitterNode *smoke = [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:@"Trail" ofType:@"sks"]];
@@ -63,11 +70,13 @@
         smoke.particleColor = [UIColor redColor];
         smoke.position = CGPointMake(10, 10);
         [enemy addChild:smoke];
-        enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:20];
+        enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
         enemy.position = CGPointMake(100, 100);
     
     [_enemies addObject:enemy];
     [self addChild:enemy];
+    
+    [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -88,8 +97,8 @@
     for(SKNode *enemyNode in _enemies) {
         CGPoint enemyPos = enemyNode.position;
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
-        CGVector unit = TCVectorUnit(diff);
-        CGVector force = TCVectorMultiply(unit, 100);
+        CGVector invDiff = TCVectorMultiply(diff, 1/TCVectorLength(diff));
+        CGVector force = TCVectorMultiply(invDiff, 10);
         
         [enemyNode.physicsBody applyForce:force];
     }
