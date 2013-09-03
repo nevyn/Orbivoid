@@ -10,6 +10,8 @@
 
 @interface ORBCharacterNode : SKNode
 @property(nonatomic,readonly) SKEmitterNode *trail;
+@property(nonatomic,readonly) CGSize size;
 - (id)initWithSize:(CGSize)size;
 - (void)didMoveToParent;
+- (void)pointToPlayer:(ORBCharacterNode*)player;
 @end

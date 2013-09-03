@@ -159,7 +159,7 @@ enum {
     
     CGPoint playerPos = _player.position;
     
-    for(SKNode *enemyNode in _enemies) {
+    for(ORBCharacterNode *enemyNode in _enemies) {
         CGPoint enemyPos = enemyNode.position;
         
         /* Uniform speed: */
@@ -180,6 +180,7 @@ enum {
         */
         
         [enemyNode.physicsBody applyForce:force];
+        [enemyNode pointToPlayer:_player];
     }
     
     _player.physicsBody.velocity = CGVectorMake(0, 0);

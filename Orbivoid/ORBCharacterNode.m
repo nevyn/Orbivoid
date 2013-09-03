@@ -1,20 +1,17 @@
-//
-//  ORBCharacterNode.m
-//  Orbivoid
-//
-//  Created by Joachim Bengtsson on 2013-09-03.
-//  Copyright (c) 2013 Neto. All rights reserved.
-//
-
 #import "ORBCharacterNode.h"
 #import "SKEmitterNode+fromFile.h"
+#import "CGVector+TC.h"
 
 @implementation ORBCharacterNode
+{
+    SKShapeNode *_line;
+}
 - (id)initWithSize:(CGSize)size
 {
     if(!(self = [super init]))
         return nil;
     
+    _size = size;
     _trail = [SKEmitterNode orb_emitterNamed:@"Trail"];
         _trail.position = CGPointMake(size.width/2, size.height/2);
         [self addChild:_trail];
@@ -24,8 +21,40 @@
     
     return self;
 }
+
 - (void)didMoveToParent
 {
     _trail.targetNode = self.parent;
+}
+
+- (void)pointToPlayer:(ORBCharacterNode*)player;
+{
+    if(!player.parent) {
+        _line.alpha = 0;
+        return;
+    }
+    
+    if(!_line) {
+        _line = [SKShapeNode node];
+        _line.strokeColor = [SKColor colorWithWhite:1 alpha:.5];
+        _line.lineWidth = 1;
+        _line.glowWidth = 3;
+    }
+    [self.parent insertChild:_line atIndex:0];
+    UIBezierPath *bzp = [UIBezierPath bezierPath];
+    
+    CGPoint source = self.position;
+    source.x += self.size.width/2; source.y += self.size.height/2;
+    CGPoint target = player.position;
+    target.x += player.size.width/2; target.y += player.size.height/2;
+    
+    CGVector diff = TCVectorMinus(source, target);
+    
+    static const float alphaDistance = 1000;
+    _line.alpha = MAX(0, (alphaDistance - TCVectorLength(diff))/alphaDistance);
+    
+    [bzp moveToPoint:source];
+    [bzp addLineToPoint:target];
+    _line.path = bzp.CGPath;
 }
 @end
