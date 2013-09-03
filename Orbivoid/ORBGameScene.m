@@ -25,6 +25,7 @@ enum {
     SKNode *_player;
     NSMutableArray *_enemies;
     BOOL _dead;
+    SKLabelNode *_scoreLabel;
 }
 
 -(id)initWithSize:(CGSize)size {    
@@ -62,6 +63,8 @@ enum {
         
         [self addChild:background];
         [self addChild:_player];
+        
+        [self updateScoreLabel];
     }
     return self;
 }
@@ -76,6 +79,9 @@ enum {
 
 - (void)spawnEnemy
 {
+    if(_dead)
+        return;
+    
     SKNode *enemy = [SKNode node];
     
         SKEmitterNode *trail = [SKEmitterNode orb_emitterNamed:@"Trail"];
@@ -89,7 +95,7 @@ enum {
         trail.position = CGPointMake(10, 10);
         [enemy addChild:trail];
     
-        CGFloat radius = MAX(self.size.height, self.size.width)/2;
+        CGFloat radius = MAX(self.size.height, self.size.width)*0.7;
         CGFloat angle = (arc4random_uniform(1000)/1000.) * M_PI*2;
         CGPoint p = CGPointMake(cos(angle)*radius, sin(angle)*radius);
         enemy.position = CGPointMake(self.size.width/2 + p.x, self.size.width/2 + p.y);
@@ -100,6 +106,7 @@ enum {
     
     [_enemies addObject:enemy];
     [self addChild:enemy];
+    [self updateScoreLabel];
     
     [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];
     
@@ -108,6 +115,20 @@ enum {
         [SKAction waitForDuration:5],
         [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
     ]]];
+}
+
+- (void)updateScoreLabel
+{
+    if(!_scoreLabel) {
+        _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
+        
+        _scoreLabel.fontSize = 200;
+        _scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame),
+                                       CGRectGetMidY(self.frame));
+        _scoreLabel.fontColor = [SKColor colorWithHue:0 saturation:0 brightness:1 alpha:0.3];
+        [self addChild:_scoreLabel];
+    }
+    _scoreLabel.text = [NSString stringWithFormat:@"%02d", _enemies.count];
 }
 
 - (void)dieFrom:(SKNode*)killingEnemy
