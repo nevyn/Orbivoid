@@ -9,6 +9,8 @@
 #import "ORBGameScene.h"
 #import "ORBMenuScene.h"
 #import "CGVector+TC.h"
+#import "SKEmitterNode+fromFile.h"
+#import "ORBCharacterNode.h"
 
 enum {
     CollisionPlayer = 1<<1,
@@ -16,13 +18,12 @@ enum {
 };
 
 
-
 @interface ORBGameScene () <SKPhysicsContactDelegate>
 @end
 
 @implementation ORBGameScene
 {
-    SKNode *_player;
+    ORBCharacterNode *_player;
     NSMutableArray *_enemies;
     BOOL _dead;
     SKLabelNode *_scoreLabel;
@@ -38,23 +39,10 @@ enum {
         
         _enemies = [NSMutableArray new];
         
-        _player = [SKNode node];
-            SKShapeNode *circle = [SKShapeNode node];
-            circle.path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(0, 0, 20, 20)].CGPath;
-            circle.fillColor = [UIColor blueColor];
-            circle.strokeColor = [UIColor blueColor];
-            circle.glowWidth = 5;
-        
-            SKEmitterNode *trail = [SKEmitterNode orb_emitterNamed:@"Trail"];
-            trail.targetNode = self;
-            trail.position = CGPointMake(CGRectGetMidX(circle.frame), CGRectGetMidY(circle.frame));
-            [_player addChild:trail];
-        
-            _player.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:10];
+        _player = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(10, 10) spawningParticlesIn:self];
             _player.physicsBody.mass = 100000;
             _player.physicsBody.categoryBitMask = CollisionPlayer;
             _player.physicsBody.contactTestBitMask = CollisionEnemy;
-        
             _player.position = CGPointMake(size.width/2, size.height/2);
         
         SKEmitterNode *background = [SKEmitterNode orb_emitterNamed:@"Background"];
@@ -82,27 +70,18 @@ enum {
     if(_dead)
         return;
     
-    SKNode *enemy = [SKNode node];
-    
-        SKEmitterNode *trail = [SKEmitterNode orb_emitterNamed:@"Trail"];
-        trail.targetNode = self;
-        trail.particleColorSequence = [[SKKeyframeSequence alloc] initWithKeyframeValues:@[
+    ORBCharacterNode *enemy = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(6, 6) spawningParticlesIn:self];
+        enemy.trail.particleColorSequence = [[SKKeyframeSequence alloc] initWithKeyframeValues:@[
             [SKColor redColor],
             [SKColor colorWithHue:0.1 saturation:.5 brightness:1 alpha:1],
             [SKColor redColor],
         ] times:@[@0, @0.02, @0.2]];
-        trail.particleScale /= 2;
-        trail.position = CGPointMake(10, 10);
-        [enemy addChild:trail];
-    
+        enemy.trail.particleScale /= 2;
         CGFloat radius = MAX(self.size.height, self.size.width)*0.7;
         CGFloat angle = (arc4random_uniform(1000)/1000.) * M_PI*2;
         CGPoint p = CGPointMake(cos(angle)*radius, sin(angle)*radius);
         enemy.position = CGPointMake(self.size.width/2 + p.x, self.size.width/2 + p.y);
-    
-        enemy.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:6];
         enemy.physicsBody.categoryBitMask = CollisionEnemy;
-        enemy.physicsBody.allowsRotation = NO;
     
     [_enemies addObject:enemy];
     [self addChild:enemy];
@@ -213,11 +192,3 @@ enum {
 }
 
 @end
-
-@implementation SKEmitterNode (fromFile)
-+ (instancetype)orb_emitterNamed:(NSString*)name
-{
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:name ofType:@"sks"]];
-}
-@end
-

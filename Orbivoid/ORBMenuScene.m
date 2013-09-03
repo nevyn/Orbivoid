@@ -8,6 +8,7 @@
 
 #import "ORBMenuScene.h"
 #import "ORBGameScene.h"
+#import "SKEmitterNode+fromFile.h"
 
 @implementation ORBMenuScene
 - (instancetype)initWithSize:(CGSize)size

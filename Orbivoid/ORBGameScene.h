@@ -11,8 +11,3 @@
 @interface ORBGameScene : SKScene
 
 @end
-
-
-@interface SKEmitterNode (fromFile)
-+ (instancetype)orb_emitterNamed:(NSString*)name;
-@end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		055DB1CF17D659F1003B7585 /* SKEmitterNode+fromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1CE17D659F1003B7585 /* SKEmitterNode+fromFile.m */; };
+		055DB1D217D65A3C003B7585 /* ORBCharacterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1D117D65A3C003B7585 /* ORBCharacterNode.m */; };
 		05A333B417D36A1900E4BBF7 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B317D36A1900E4BBF7 /* Explosion.sks */; };
 		05A333B617D36D2200E4BBF7 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B517D36D2200E4BBF7 /* Explosion.wav */; };
 		05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */; };
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		055DB1CD17D659F1003B7585 /* SKEmitterNode+fromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+fromFile.h"; sourceTree = "<group>"; };
+		055DB1CE17D659F1003B7585 /* SKEmitterNode+fromFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+fromFile.m"; sourceTree = "<group>"; };
+		055DB1D017D65A3C003B7585 /* ORBCharacterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBCharacterNode.h; sourceTree = "<group>"; };
+		055DB1D117D65A3C003B7585 /* ORBCharacterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBCharacterNode.m; sourceTree = "<group>"; };
 		05A333B317D36A1900E4BBF7 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		05A333B517D36D2200E4BBF7 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = SOURCE_ROOT; };
 		05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBMenuScene.h; sourceTree = "<group>"; };
@@ -149,6 +155,10 @@
 				05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */,
 				05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */,
 				05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */,
+				055DB1D017D65A3C003B7585 /* ORBCharacterNode.h */,
+				055DB1D117D65A3C003B7585 /* ORBCharacterNode.m */,
+				055DB1CD17D659F1003B7585 /* SKEmitterNode+fromFile.h */,
+				055DB1CE17D659F1003B7585 /* SKEmitterNode+fromFile.m */,
 				05B8370017CD46970059C67D /* CGVector+TC.h */,
 				05DF1F2317CD338E00E3B321 /* Trail.sks */,
 				05DF1F2417CD338E00E3B321 /* spark.png */,
@@ -300,8 +310,10 @@
 			files = (
 				05DF1F0017CD2CAE00E3B321 /* ORBViewController.m in Sources */,
 				05DF1EF717CD2CAE00E3B321 /* ORBAppDelegate.m in Sources */,
+				055DB1D217D65A3C003B7585 /* ORBCharacterNode.m in Sources */,
 				05DF1F0317CD2CAE00E3B321 /* ORBGameScene.m in Sources */,
 				05DF1EF317CD2CAE00E3B321 /* main.m in Sources */,
+				055DB1CF17D659F1003B7585 /* SKEmitterNode+fromFile.m in Sources */,
 				05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
