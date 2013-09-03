@@ -10,14 +10,12 @@
 #import "SKEmitterNode+fromFile.h"
 
 @implementation ORBCharacterNode
-static void *parentKey = &parentKey;
-- (id)initWithSize:(CGSize)size spawningParticlesIn:(SKNode*)scene
+- (id)initWithSize:(CGSize)size
 {
     if(!(self = [super init]))
         return nil;
     
     _trail = [SKEmitterNode orb_emitterNamed:@"Trail"];
-        _trail.targetNode = scene;
         _trail.position = CGPointMake(size.width/2, size.height/2);
         [self addChild:_trail];
 
@@ -26,5 +24,8 @@ static void *parentKey = &parentKey;
     
     return self;
 }
-
+- (void)didMoveToParent
+{
+    _trail.targetNode = self.parent;
+}
 @end

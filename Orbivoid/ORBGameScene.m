@@ -39,7 +39,7 @@ enum {
         
         _enemies = [NSMutableArray new];
         
-        _player = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(10, 10) spawningParticlesIn:self];
+        _player = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(10, 10)];
             _player.physicsBody.mass = 100000;
             _player.physicsBody.categoryBitMask = CollisionPlayer;
             _player.physicsBody.contactTestBitMask = CollisionEnemy;
@@ -51,6 +51,7 @@ enum {
         
         [self addChild:background];
         [self addChild:_player];
+        [_player didMoveToParent];
         
         [self updateScoreLabel];
     }
@@ -70,7 +71,7 @@ enum {
     if(_dead)
         return;
     
-    ORBCharacterNode *enemy = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(6, 6) spawningParticlesIn:self];
+    ORBCharacterNode *enemy = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(6, 6)];
         enemy.trail.particleColorSequence = [[SKKeyframeSequence alloc] initWithKeyframeValues:@[
             [SKColor redColor],
             [SKColor colorWithHue:0.1 saturation:.5 brightness:1 alpha:1],
@@ -85,6 +86,8 @@ enum {
     
     [_enemies addObject:enemy];
     [self addChild:enemy];
+    [enemy didMoveToParent];
+    
     [self updateScoreLabel];
     
     [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];

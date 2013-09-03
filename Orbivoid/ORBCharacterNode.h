@@ -10,5 +10,6 @@
 
 @interface ORBCharacterNode : SKNode
 @property(nonatomic,readonly) SKEmitterNode *trail;
-- (id)initWithSize:(CGSize)size spawningParticlesIn:(SKNode*)scene;
+- (id)initWithSize:(CGSize)size;
+- (void)didMoveToParent;
 @end
