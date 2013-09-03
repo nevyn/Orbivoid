@@ -26,7 +26,6 @@ enum {
     ORBCharacterNode *_player;
     NSMutableArray *_enemies;
     BOOL _dead;
-    SKLabelNode *_scoreLabel;
 }
 
 -(id)initWithSize:(CGSize)size {    
@@ -63,7 +62,6 @@ enum {
         [self runAction:[SKAction group:@[
 /*            [SKAction spawnPlayer] => spawn animation, then add player to world,*/
         ]]];
-    [self performSelector:@selector(spawnEnemy) withObject:nil afterDelay:1.0];
 }
 
 - (void)spawnEnemy
@@ -91,12 +89,6 @@ enum {
     [self updateScoreLabel];
     
     [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];
-    
-    // Next spawn
-    [self runAction:[SKAction sequence:@[
-        [SKAction waitForDuration:5],
-        [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
-    ]]];
 }
 
 - (void)updateScoreLabel
@@ -110,7 +102,6 @@ enum {
         _scoreLabel.fontColor = [SKColor colorWithHue:0 saturation:0 brightness:1 alpha:0.3];
         [self addChild:_scoreLabel];
     }
-    _scoreLabel.text = [NSString stringWithFormat:@"%02d", _enemies.count];
 }
 
 - (void)dieFrom:(SKNode*)killingEnemy
@@ -186,13 +177,8 @@ enum {
     _player.physicsBody.velocity = CGVectorMake(0, 0);
 }
 
-- (void)didBeginContact:(SKPhysicsContact *)contact
++ (NSString*)modeName
 {
-    if(_dead)
-        return;
-    
-    [self dieFrom:contact.bodyB.node];
-    contact.bodyB.node.physicsBody = nil;
+    return @"Base class";
 }
-
 @end

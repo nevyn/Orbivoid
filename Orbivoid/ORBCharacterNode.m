@@ -26,6 +26,10 @@
 {
     _trail.targetNode = self.parent;
 }
+- (void)didLeaveParent;
+{
+    [_line removeFromParent];
+}
 
 - (void)pointToPlayer:(ORBCharacterNode*)player;
 {

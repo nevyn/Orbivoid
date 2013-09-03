@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		055DB1CF17D659F1003B7585 /* SKEmitterNode+fromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1CE17D659F1003B7585 /* SKEmitterNode+fromFile.m */; };
 		055DB1D217D65A3C003B7585 /* ORBCharacterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1D117D65A3C003B7585 /* ORBCharacterNode.m */; };
+		055DB1D817D676C5003B7585 /* ORBAvoidGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1D717D676C5003B7585 /* ORBAvoidGameScene.m */; };
+		055DB1DB17D67726003B7585 /* ORBHitOrbs.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1DA17D67726003B7585 /* ORBHitOrbs.m */; };
 		05A333B417D36A1900E4BBF7 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B317D36A1900E4BBF7 /* Explosion.sks */; };
 		05A333B617D36D2200E4BBF7 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B517D36D2200E4BBF7 /* Explosion.wav */; };
 		05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */; };
@@ -51,6 +53,10 @@
 		055DB1CE17D659F1003B7585 /* SKEmitterNode+fromFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+fromFile.m"; sourceTree = "<group>"; };
 		055DB1D017D65A3C003B7585 /* ORBCharacterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBCharacterNode.h; sourceTree = "<group>"; };
 		055DB1D117D65A3C003B7585 /* ORBCharacterNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBCharacterNode.m; sourceTree = "<group>"; };
+		055DB1D617D676C5003B7585 /* ORBAvoidGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBAvoidGameScene.h; sourceTree = "<group>"; };
+		055DB1D717D676C5003B7585 /* ORBAvoidGameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBAvoidGameScene.m; sourceTree = "<group>"; };
+		055DB1D917D67726003B7585 /* ORBHitOrbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBHitOrbs.h; sourceTree = "<group>"; };
+		055DB1DA17D67726003B7585 /* ORBHitOrbs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBHitOrbs.m; sourceTree = "<group>"; };
 		05A333B317D36A1900E4BBF7 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		05A333B517D36D2200E4BBF7 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = SOURCE_ROOT; };
 		05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBMenuScene.h; sourceTree = "<group>"; };
@@ -153,6 +159,10 @@
 				05DF1EFF17CD2CAE00E3B321 /* ORBViewController.m */,
 				05DF1F0117CD2CAE00E3B321 /* ORBGameScene.h */,
 				05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */,
+				055DB1D617D676C5003B7585 /* ORBAvoidGameScene.h */,
+				055DB1D717D676C5003B7585 /* ORBAvoidGameScene.m */,
+				055DB1D917D67726003B7585 /* ORBHitOrbs.h */,
+				055DB1DA17D67726003B7585 /* ORBHitOrbs.m */,
 				05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */,
 				05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */,
 				055DB1D017D65A3C003B7585 /* ORBCharacterNode.h */,
@@ -312,6 +322,8 @@
 				05DF1EF717CD2CAE00E3B321 /* ORBAppDelegate.m in Sources */,
 				055DB1D217D65A3C003B7585 /* ORBCharacterNode.m in Sources */,
 				05DF1F0317CD2CAE00E3B321 /* ORBGameScene.m in Sources */,
+				055DB1DB17D67726003B7585 /* ORBHitOrbs.m in Sources */,
+				055DB1D817D676C5003B7585 /* ORBAvoidGameScene.m in Sources */,
 				05DF1EF317CD2CAE00E3B321 /* main.m in Sources */,
 				055DB1CF17D659F1003B7585 /* SKEmitterNode+fromFile.m in Sources */,
 				05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */,

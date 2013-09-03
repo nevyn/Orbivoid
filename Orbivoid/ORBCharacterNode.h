@@ -13,5 +13,6 @@
 @property(nonatomic,readonly) CGSize size;
 - (id)initWithSize:(CGSize)size;
 - (void)didMoveToParent;
+- (void)didLeaveParent;
 - (void)pointToPlayer:(ORBCharacterNode*)player;
 @end
