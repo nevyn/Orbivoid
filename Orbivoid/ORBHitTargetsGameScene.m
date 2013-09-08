@@ -75,14 +75,15 @@ enum {
     static const CGFloat squareSize = 40;
     SKNode *square = [SKNode new];
         SKShapeNode *shape = [SKShapeNode node];
-            shape.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, squareSize, squareSize) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(5, 5)].CGPath;
-            shape.position = CGPointMake(arc4random_uniform(self.frame.size.width-80)+40, arc4random_uniform(self.frame.size.height-80)+40);
+            shape.path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(-squareSize/2, -squareSize/2, squareSize, squareSize) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(5, 5)].CGPath;
             [square addChild:shape];
     
-        square.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:CGRectMake(shape.position.x, shape.position.y, squareSize, squareSize)];
+        square.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(squareSize, squareSize)];
         square.physicsBody.contactTestBitMask = CollisionEnemy;
         square.physicsBody.categoryBitMask = CollisionTarget;
-        //square.physicsBody.collisionBitMask = CollisionEnemy;
+        square.physicsBody.mass = 100000000;
+    
+        square.position = CGPointMake(arc4random_uniform(self.frame.size.width-80)+40, arc4random_uniform(self.frame.size.height-80)+40);
     
         [self addChild:square];
 }
