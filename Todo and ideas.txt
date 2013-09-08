@@ -1,8 +1,10 @@
 todo:
 - Online highscores
 - Positional audio
-- Square hitting game mode
 - Mac port
+- Enemies start out still and then accelerate
+- Neato spawn animation for orbs
 
 done:
 - Alternate scoring: being as close as possible to orbs
+- Square hitting game mode

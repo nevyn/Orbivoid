@@ -9,6 +9,11 @@
 #import <SpriteKit/SpriteKit.h>
 @class ORBCharacterNode;
 
+enum {
+    CollisionPlayer = 1<<1,
+    CollisionEnemy = 1<<2,
+};
+
 @interface ORBGameScene : SKScene
 @property(nonatomic,readonly) SKLabelNode *scoreLabel;
 @property(nonatomic,readonly) NSMutableArray *enemies;
@@ -20,3 +25,5 @@
 - (void)dieFrom:(SKNode*)killingEnemy;
 - (void)spawnEnemy;
 @end
+
+SKAction *explosionAction(SKEmitterNode *explosion, CGFloat duration, dispatch_block_t removal, dispatch_block_t afterwards);

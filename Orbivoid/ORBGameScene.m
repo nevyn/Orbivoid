@@ -12,11 +12,6 @@
 #import "SKEmitterNode+fromFile.h"
 #import "ORBCharacterNode.h"
 
-enum {
-    CollisionPlayer = 1<<1,
-    CollisionEnemy = 1<<2,
-};
-
 
 @interface ORBGameScene () <SKPhysicsContactDelegate>
 @end
@@ -95,6 +90,20 @@ enum {
     [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];
 }
 
+SKAction *explosionAction(SKEmitterNode *explosion, CGFloat duration, dispatch_block_t removal, dispatch_block_t afterwards)
+{
+    return [SKAction sequence:@[
+		[SKAction waitForDuration:duration/2],
+        [SKAction runBlock:removal],
+		[SKAction waitForDuration:duration/2],
+		[SKAction runBlock:^{
+			explosion.particleBirthRate = 0;
+		}],
+		[SKAction waitForDuration:duration*2],
+        [SKAction runBlock:afterwards],
+    ]];
+}
+
 - (void)dieFrom:(SKNode*)killingEnemy
 {
     _dead = YES;
@@ -102,25 +111,15 @@ enum {
     SKEmitterNode *explosion = [SKEmitterNode orb_emitterNamed:@"Explosion"];
     explosion.position = _player.position;
     [self addChild:explosion];
-    [explosion runAction:[SKAction sequence:@[
-        [SKAction playSoundFileNamed:@"Explosion.wav" waitForCompletion:NO],
-		[SKAction waitForDuration:0.4],
-        [SKAction runBlock:^{
-            // TODO: Remove these more nicely
-            [killingEnemy removeFromParent];
-            [_player removeFromParent];
-        }],
-		[SKAction waitForDuration:0.4],
-		[SKAction runBlock:^{
-			explosion.particleBirthRate = 0;
-		}],
-		[SKAction waitForDuration:1.2],
-        
-        [SKAction runBlock:^{
-            ORBMenuScene *menu = [[ORBMenuScene alloc] initWithSize:self.size];
-            [self.view presentScene:menu transition:[SKTransition doorsCloseHorizontalWithDuration:0.5]];
-        }],
-	]]];
+    [explosion runAction:[SKAction playSoundFileNamed:@"Explosion.wav" waitForCompletion:NO]];
+    [explosion runAction:explosionAction(explosion, 0.8, ^{
+        // TODO: Remove these more nicely
+        [killingEnemy removeFromParent];
+        [_player removeFromParent];
+    }, ^{
+        ORBMenuScene *menu = [[ORBMenuScene alloc] initWithSize:self.size];
+        [self.view presentScene:menu transition:[SKTransition doorsCloseHorizontalWithDuration:0.5]];
+    })];
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
