@@ -19,7 +19,15 @@
     self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:size.width];
     self.physicsBody.allowsRotation = NO;
     
+    _maxSpeed = 4;
+    
     return self;
+}
+
+- (CGFloat)speedAtTime:(NSTimeInterval)time
+{
+    static const CGFloat accelerationTime = 2;
+    return self.maxSpeed * MIN(1, (time - _bornAt)/accelerationTime);
 }
 
 - (void)didMoveToParent

@@ -11,6 +11,10 @@
 @interface ORBCharacterNode : SKNode
 @property(nonatomic,readonly) SKEmitterNode *trail;
 @property(nonatomic,readonly) CGSize size;
+@property(nonatomic) CGFloat maxSpeed;
+@property(nonatomic) NSTimeInterval bornAt;
+- (CGFloat)speedAtTime:(NSTimeInterval)time;
+
 - (id)initWithSize:(CGSize)size;
 - (void)didMoveToParent;
 - (void)didLeaveParent;

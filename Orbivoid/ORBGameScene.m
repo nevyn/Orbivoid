@@ -20,6 +20,7 @@
 {
     NSMutableArray *_enemies;
     CGFloat _displayedScore;
+    NSTimeInterval _currentTime;
 }
 
 -(id)initWithSize:(CGSize)size
@@ -82,6 +83,7 @@
         CGPoint p = CGPointMake(cos(angle)*radius, sin(angle)*radius);
         enemy.position = CGPointMake(self.size.width/2 + p.x, self.size.width/2 + p.y);
         enemy.physicsBody.categoryBitMask = CollisionEnemy;
+        enemy.bornAt = _currentTime;
     
     [_enemies addObject:enemy];
     [self addChild:enemy];
@@ -137,7 +139,7 @@ SKAction *explosionAction(SKEmitterNode *explosion, CGFloat duration, dispatch_b
 
 -(void)update:(CFTimeInterval)currentTime
 {
-    
+    _currentTime = currentTime;
     CGPoint playerPos = _player.position;
     
     for(ORBCharacterNode *enemyNode in _enemies) {
@@ -146,7 +148,7 @@ SKAction *explosionAction(SKEmitterNode *explosion, CGFloat duration, dispatch_b
         /* Uniform speed: */
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
         CGVector normalized = TCVectorUnit(diff);
-        CGVector force = TCVectorMultiply(normalized, 4);
+        CGVector force = TCVectorMultiply(normalized, [enemyNode speedAtTime:currentTime]);
         
         /* Inversely proportional:
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
