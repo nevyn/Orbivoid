@@ -23,12 +23,12 @@ enum {
 
 @implementation ORBGameScene
 {
-    ORBCharacterNode *_player;
     NSMutableArray *_enemies;
-    BOOL _dead;
+    CGFloat _displayedScore;
 }
 
--(id)initWithSize:(CGSize)size {    
+-(id)initWithSize:(CGSize)size
+{
     if (self = [super initWithSize:size]) {
         
         self.backgroundColor = [SKColor blackColor];
@@ -38,21 +38,27 @@ enum {
         
         _enemies = [NSMutableArray new];
         
+        SKEmitterNode *background = [SKEmitterNode orb_emitterNamed:@"Background"];
+            background.particlePositionRange = CGVectorMake(self.size.width*2, self.size.height*2);
+            [background advanceSimulationTime:10];
+            [self addChild:background];
+        
         _player = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(10, 10)];
             _player.physicsBody.mass = 100000;
             _player.physicsBody.categoryBitMask = CollisionPlayer;
             _player.physicsBody.contactTestBitMask = CollisionEnemy;
             _player.position = CGPointMake(size.width/2, size.height/2);
+            [self addChild:_player];
+            [_player didMoveToParent];
         
-        SKEmitterNode *background = [SKEmitterNode orb_emitterNamed:@"Background"];
-            background.particlePositionRange = CGVectorMake(self.size.width*2, self.size.height*2);
-            [background advanceSimulationTime:10];
-        
-        [self addChild:background];
-        [self addChild:_player];
-        [_player didMoveToParent];
-        
-        [self updateScoreLabel];
+        _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
+            _scoreLabel.fontSize = 200;
+            _scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame));
+            _scoreLabel.fontColor = [SKColor colorWithHue:0 saturation:0 brightness:1 alpha:0.3];
+            _scoreLabel.text = @"00";
+
+            [self addChild:_scoreLabel];
+
     }
     return self;
 }
@@ -86,22 +92,7 @@ enum {
     [self addChild:enemy];
     [enemy didMoveToParent];
     
-    [self updateScoreLabel];
-    
     [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];
-}
-
-- (void)updateScoreLabel
-{
-    if(!_scoreLabel) {
-        _scoreLabel = [SKLabelNode labelNodeWithFontNamed:@"Courier-Bold"];
-        
-        _scoreLabel.fontSize = 200;
-        _scoreLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        _scoreLabel.fontColor = [SKColor colorWithHue:0 saturation:0 brightness:1 alpha:0.3];
-        [self addChild:_scoreLabel];
-    }
 }
 
 - (void)dieFrom:(SKNode*)killingEnemy
@@ -175,6 +166,11 @@ enum {
     }
     
     _player.physicsBody.velocity = CGVectorMake(0, 0);
+    
+    if(self.score != _displayedScore) {
+        self.scoreLabel.text = [NSString stringWithFormat:@"%02.0f", self.score];
+        _displayedScore = self.score;
+    }
 }
 
 + (NSString*)modeName

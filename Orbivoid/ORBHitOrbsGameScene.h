@@ -8,6 +8,6 @@
 
 #import "ORBGameScene.h"
 
-@interface ORBHitOrbs : ORBGameScene
+@interface ORBHitOrbsGameScene : ORBGameScene
 
 @end

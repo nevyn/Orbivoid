@@ -1,0 +1,8 @@
+todo:
+- Online highscores
+- Positional audio
+- Square hitting game mode
+- Mac port
+
+done:
+- Alternate scoring: being as close as possible to orbs

@@ -6,13 +6,10 @@
 //  Copyright (c) 2013 Neto. All rights reserved.
 //
 
-#import "ORBHitOrbs.h"
+#import "ORBHitOrbsGameScene.h"
 #import "ORBCharacterNode.h"
 
-@implementation ORBHitOrbs
-{
-    int _score;
-}
+@implementation ORBHitOrbsGameScene
 - (void)didMoveToView:(SKView *)view
 {
     [self performSelector:@selector(spawnEnemy) withObject:nil afterDelay:1.0];
@@ -36,18 +33,11 @@
 
 - (void)didBeginContact:(SKPhysicsContact *)contact
 {
-    _score += 1;
+    self.score += 1;
     
     [self.enemies removeObject:contact.bodyB.node];
     [contact.bodyB.node removeFromParent];
     [(id)contact.bodyB.node didLeaveParent];
-    [self updateScoreLabel];
-}
-
-- (void)updateScoreLabel
-{
-    [super updateScoreLabel];
-    self.scoreLabel.text = [NSString stringWithFormat:@"%02d", _score];
 }
 
 @end

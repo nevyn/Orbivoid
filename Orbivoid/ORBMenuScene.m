@@ -12,6 +12,8 @@
 #import <objc/runtime.h>
 #import "ORBGameScene.h"
 
+static NSString *const ORBGameModeDefault = @"orbivoid.gamemode";
+
 @interface ORBMenuScene () <UITableViewDataSource, UITableViewDelegate>
 @end
 
@@ -49,6 +51,11 @@
         tapToPlay.fontColor = [SKColor colorWithHue:0 saturation:0 brightness:1 alpha:0.7];
         [self addChild:tapToPlay];
         
+        NSString *currentModeName = [[NSUserDefaults standardUserDefaults] stringForKey:ORBGameModeDefault];
+        _currentMode = NSClassFromString(currentModeName);
+        if(!_currentMode)
+            _currentMode = [self availableGameScenes][0];
+        
         _modeButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _modeButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Black" size:40];
         [_modeButton setTitleColor:[UIColor colorWithWhite:1 alpha:1] forState:UIControlStateNormal];
@@ -78,10 +85,6 @@
 
 - (void)updateModeButton
 {
-    if(!_currentMode) {
-        _currentMode = [self availableGameScenes][0];
-    }
-    
     [_modeButton setTitle:[_currentMode modeName] forState:UIControlStateNormal];
 }
 
@@ -112,6 +115,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     _currentMode = [self availableGameScenes][indexPath.row];
+    [[NSUserDefaults standardUserDefaults] setObject:NSStringFromClass(_currentMode) forKey:ORBGameModeDefault];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [_modeChooser.view removeFromSuperview];
     [self updateModeButton];
 }

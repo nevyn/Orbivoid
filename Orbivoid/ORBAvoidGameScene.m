@@ -18,18 +18,13 @@
 - (void)spawnEnemy
 {
     [super spawnEnemy];
+    self.score += 1;
     
     // Next spawn
     [self runAction:[SKAction sequence:@[
         [SKAction waitForDuration:5],
         [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
     ]]];
-}
-
-- (void)updateScoreLabel
-{
-    [super updateScoreLabel];
-    self.scoreLabel.text = [NSString stringWithFormat:@"%02d", self.enemies.count];
 }
 
 + (NSString*)modeName
