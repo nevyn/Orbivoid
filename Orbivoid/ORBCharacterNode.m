@@ -16,7 +16,7 @@
         _trail.position = CGPointMake(size.width/2, size.height/2);
         [self addChild:_trail];
 
-    self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:size.width];
+    self.physicsBody = [SKPhysicsBody bodyWithCircleOfRadius:size.width*1.2];
     self.physicsBody.allowsRotation = NO;
     
     return self;

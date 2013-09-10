@@ -36,6 +36,7 @@ enum {
         
         self.physicsWorld.gravity = CGPointMake(0, 0);
         self.physicsWorld.contactDelegate = self;
+        self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
         
         _enemies = [NSMutableArray new];
         
@@ -78,10 +79,8 @@ enum {
             [SKColor redColor],
         ] times:@[@0, @0.02, @0.2]];
         enemy.trail.particleScale /= 2;
-        CGFloat radius = MAX(self.size.height, self.size.width)*0.7;
-        CGFloat angle = (arc4random_uniform(1000)/1000.) * M_PI*2;
-        CGPoint p = CGPointMake(cos(angle)*radius, sin(angle)*radius);
-        enemy.position = CGPointMake(self.size.width/2 + p.x, self.size.width/2 + p.y);
+    
+        enemy.position = [self randomEnemyPosition];
         enemy.physicsBody.categoryBitMask = CollisionEnemy;
     
     [_enemies addObject:enemy];
@@ -94,9 +93,32 @@ enum {
     
     // Next spawn
     [self runAction:[SKAction sequence:@[
-        [SKAction waitForDuration:5],
+        [SKAction waitForDuration:2],
         [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
     ]]];
+}
+
+- (CGPoint)randomEnemyPosition
+{
+    // Spawn next to the player
+    CGPoint position = _player.position;
+    
+    // Offset
+    float maxOffset = 100;
+//    float minOffset = 20;
+    position.x += arc4random_uniform(maxOffset*2)-maxOffset;
+    position.y += arc4random_uniform(maxOffset*2)-maxOffset;
+    
+    NSLog(@"Position x: %f   y: %f", position.x, position.y);
+
+    // Spawn within the frame
+    position.x = MAX(0, position.x);
+    position.x = MIN(self.frame.size.width, position.x);
+    
+    position.y = MAX(0, position.x);
+    position.y = MIN(self.frame.size.width, position.x);
+    
+    return position;
 }
 
 - (void)updateScoreLabel
@@ -165,7 +187,7 @@ enum {
         /* Uniform speed: */
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
         CGVector normalized = TCVectorUnit(diff);
-        CGVector force = TCVectorMultiply(normalized, 4);
+        CGVector force = TCVectorMultiply(normalized, 1.9);
         
         /* Inversely proportional:
         CGVector diff = TCVectorMinus(playerPos, enemyPos);
@@ -180,7 +202,7 @@ enum {
         */
         
         [enemyNode.physicsBody applyForce:force];
-        [enemyNode pointToPlayer:_player];
+//        [enemyNode pointToPlayer:_player];
     }
     
     _player.physicsBody.velocity = CGVectorMake(0, 0);
