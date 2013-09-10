@@ -21,7 +21,7 @@
     
     // Next spawn
     [self runAction:[SKAction sequence:@[
-        [SKAction waitForDuration:1],
+        [SKAction waitForDuration:0.5],
         [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
     ]]];
 }
