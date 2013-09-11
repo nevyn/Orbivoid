@@ -29,7 +29,7 @@
         
         self.backgroundColor = [SKColor blackColor];
         
-        self.physicsWorld.gravity = CGPointMake(0, 0);
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
         
         _enemies = [NSMutableArray new];
