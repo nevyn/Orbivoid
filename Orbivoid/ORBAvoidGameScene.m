@@ -15,9 +15,9 @@
     [self performSelector:@selector(spawnEnemy) withObject:nil afterDelay:1.0];
 }
 
-- (void)spawnEnemy
+- (ORBCharacterNode*)spawnEnemy
 {
-    [super spawnEnemy];
+    id enemy = [super spawnEnemy];
     self.score += 1;
     
     // Next spawn
@@ -25,6 +25,8 @@
         [SKAction waitForDuration:5],
         [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
     ]]];
+    
+    return enemy;
 }
 
 + (NSString*)modeName

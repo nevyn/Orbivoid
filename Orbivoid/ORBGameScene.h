@@ -23,7 +23,8 @@ enum {
 + (NSString*)modeName;
 
 - (void)dieFrom:(SKNode*)killingEnemy;
-- (void)spawnEnemy;
+- (ORBCharacterNode*)spawnEnemy;
+- (CGPoint)randomEnemyPosition;
 @end
 
 SKAction *explosionAction(SKEmitterNode *explosion, CGFloat duration, dispatch_block_t removal, dispatch_block_t afterwards);

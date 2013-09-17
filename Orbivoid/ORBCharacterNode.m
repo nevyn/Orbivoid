@@ -41,6 +41,9 @@
 
 - (void)pointToPlayer:(ORBCharacterNode*)player;
 {
+    if(!_shouldPointToPlayer)
+        return;
+    
     if(!player.parent) {
         _line.alpha = 0;
         return;

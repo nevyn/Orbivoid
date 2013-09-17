@@ -66,10 +66,10 @@
         ]]];
 }
 
-- (void)spawnEnemy
+- (ORBCharacterNode*)spawnEnemy
 {
     if(_dead)
-        return;
+        return nil;
     
     ORBCharacterNode *enemy = [[ORBCharacterNode alloc] initWithSize:CGSizeMake(6, 6)];
         enemy.trail.particleColorSequence = [[SKKeyframeSequence alloc] initWithKeyframeValues:@[
@@ -78,10 +78,7 @@
             [SKColor redColor],
         ] times:@[@0, @0.02, @0.2]];
         enemy.trail.particleScale /= 2;
-        CGFloat radius = MAX(self.size.height, self.size.width)*0.7;
-        CGFloat angle = (arc4random_uniform(1000)/1000.) * M_PI*2;
-        CGPoint p = CGPointMake(cos(angle)*radius, sin(angle)*radius);
-        enemy.position = CGPointMake(self.size.width/2 + p.x, self.size.width/2 + p.y);
+        enemy.position = [self randomEnemyPosition];
         enemy.physicsBody.categoryBitMask = CollisionEnemy;
         enemy.bornAt = _currentTime;
     
@@ -90,6 +87,16 @@
     [enemy didMoveToParent];
     
     [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];
+    
+    return enemy;
+}
+
+- (CGPoint)randomEnemyPosition
+{
+    CGFloat radius = MAX(self.size.height, self.size.width)*0.7;
+    CGFloat angle = (arc4random_uniform(1000)/1000.) * M_PI*2;
+    CGPoint p = CGPointMake(cos(angle)*radius, sin(angle)*radius);
+    return CGPointMake(self.size.width/2 + p.x, self.size.width/2 + p.y);
 }
 
 SKAction *explosionAction(SKEmitterNode *explosion, CGFloat duration, dispatch_block_t removal, dispatch_block_t afterwards)

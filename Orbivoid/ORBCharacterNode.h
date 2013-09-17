@@ -13,6 +13,7 @@
 @property(nonatomic,readonly) CGSize size;
 @property(nonatomic) CGFloat maxSpeed;
 @property(nonatomic) NSTimeInterval bornAt;
+@property(nonatomic) BOOL shouldPointToPlayer;
 - (CGFloat)speedAtTime:(NSTimeInterval)time;
 
 - (id)initWithSize:(CGSize)size;

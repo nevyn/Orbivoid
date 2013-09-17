@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053567D517E8EA72001AA5B1 /* ORBTobiGameMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 053567D417E8EA72001AA5B1 /* ORBTobiGameMode.m */; };
 		055DB1CF17D659F1003B7585 /* SKEmitterNode+fromFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1CE17D659F1003B7585 /* SKEmitterNode+fromFile.m */; };
 		055DB1D217D65A3C003B7585 /* ORBCharacterNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1D117D65A3C003B7585 /* ORBCharacterNode.m */; };
 		055DB1D817D676C5003B7585 /* ORBAvoidGameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 055DB1D717D676C5003B7585 /* ORBAvoidGameScene.m */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		053567D317E8EA72001AA5B1 /* ORBTobiGameMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBTobiGameMode.h; sourceTree = "<group>"; };
+		053567D417E8EA72001AA5B1 /* ORBTobiGameMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBTobiGameMode.m; sourceTree = "<group>"; };
 		055DB1CD17D659F1003B7585 /* SKEmitterNode+fromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+fromFile.h"; sourceTree = "<group>"; };
 		055DB1CE17D659F1003B7585 /* SKEmitterNode+fromFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+fromFile.m"; sourceTree = "<group>"; };
 		055DB1D017D65A3C003B7585 /* ORBCharacterNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBCharacterNode.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				055DB1DA17D67726003B7585 /* ORBHitOrbsGameScene.m */,
 				0563E6B617DC9155002A5D57 /* ORBHitTargetsGameScene.h */,
 				0563E6B717DC9155002A5D57 /* ORBHitTargetsGameScene.m */,
+				053567D317E8EA72001AA5B1 /* ORBTobiGameMode.h */,
+				053567D417E8EA72001AA5B1 /* ORBTobiGameMode.m */,
 				05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */,
 				05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */,
 				055DB1D017D65A3C003B7585 /* ORBCharacterNode.h */,
@@ -357,6 +362,7 @@
 				055DB1CF17D659F1003B7585 /* SKEmitterNode+fromFile.m in Sources */,
 				0563E6B817DC9155002A5D57 /* ORBHitTargetsGameScene.m in Sources */,
 				05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */,
+				053567D517E8EA72001AA5B1 /* ORBTobiGameMode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

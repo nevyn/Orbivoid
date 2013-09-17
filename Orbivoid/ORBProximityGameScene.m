@@ -29,15 +29,17 @@
     [self performSelector:@selector(spawnEnemy) withObject:nil afterDelay:1.0];
 }
 
-- (void)spawnEnemy
+- (ORBCharacterNode*)spawnEnemy
 {
-    [super spawnEnemy];
+    id enemy = [super spawnEnemy];
     
     // Next spawn
     [self runAction:[SKAction sequence:@[
         [SKAction waitForDuration:10],
         [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
     ]]];
+    
+    return enemy;
 }
 
 - (void)update:(NSTimeInterval)currentTime
