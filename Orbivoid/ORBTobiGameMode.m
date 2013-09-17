@@ -69,4 +69,10 @@
 {
     return @"Tobi's Mode";
 }
+
+- (void)didBeginContact:(SKPhysicsContact *)contact
+{
+    [self dieFrom:contact.bodyB.node];
+    contact.bodyB.node.physicsBody = nil;
+}
 @end
