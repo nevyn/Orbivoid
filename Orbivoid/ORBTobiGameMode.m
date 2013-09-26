@@ -21,8 +21,6 @@
     position.x += arc4random_uniform(maxOffset*2)-maxOffset;
     position.y += arc4random_uniform(maxOffset*2)-maxOffset;
     
-    NSLog(@"Position x: %f   y: %f", position.x, position.y);
-
     // Spawn within the frame
     position.x = MAX(0, position.x);
     position.x = MIN(self.frame.size.width, position.x);
@@ -57,8 +55,10 @@
     self.score += 1;
     
     // Next spawn
+    CGFloat delay = MAX(2 - log10f(self.score+1), 0.2);
+    NSLog(@"Delay: %f", delay);
     [self runAction:[SKAction sequence:@[
-        [SKAction waitForDuration:2],
+        [SKAction waitForDuration:delay],
         [SKAction performSelector:@selector(spawnEnemy) onTarget:self],
     ]]];
     
