@@ -21,6 +21,7 @@
 		05A333B417D36A1900E4BBF7 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B317D36A1900E4BBF7 /* Explosion.sks */; };
 		05A333B617D36D2200E4BBF7 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B517D36D2200E4BBF7 /* Explosion.wav */; };
 		05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */; };
+		05AE47FD17F4CFA000A40A21 /* Spawn.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05AE47FC17F4CFA000A40A21 /* Spawn.sks */; };
 		05DF1EE517CD2CAD00E3B321 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE417CD2CAD00E3B321 /* Foundation.framework */; };
 		05DF1EE717CD2CAD00E3B321 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE617CD2CAD00E3B321 /* CoreGraphics.framework */; };
 		05DF1EE917CD2CAD00E3B321 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05DF1EE817CD2CAD00E3B321 /* UIKit.framework */; };
@@ -79,6 +80,7 @@
 		05A333B517D36D2200E4BBF7 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = SOURCE_ROOT; };
 		05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBMenuScene.h; sourceTree = "<group>"; };
 		05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORBMenuScene.m; sourceTree = "<group>"; };
+		05AE47FC17F4CFA000A40A21 /* Spawn.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Spawn.sks; sourceTree = "<group>"; };
 		05B8370017CD46970059C67D /* CGVector+TC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CGVector+TC.h"; sourceTree = "<group>"; };
 		05DF1EE117CD2CAD00E3B321 /* Orbivoid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbivoid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05DF1EE417CD2CAD00E3B321 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,6 +205,7 @@
 				05DF1F2817CD389300E3B321 /* bokeh.png */,
 				05DF1F2B17CD39AB00E3B321 /* Background.sks */,
 				05A333B317D36A1900E4BBF7 /* Explosion.sks */,
+				05AE47FC17F4CFA000A40A21 /* Spawn.sks */,
 				0563E6BB17DC9A81002A5D57 /* SmallExplosion.wav */,
 				05DF1F2D17CD3BFC00E3B321 /* Spawn.wav */,
 				05A333B517D36D2200E4BBF7 /* Explosion.wav */,
@@ -323,6 +326,7 @@
 				05DF1F2A17CD389300E3B321 /* bokeh.png in Resources */,
 				05DF1F0717CD2CAE00E3B321 /* Images.xcassets in Resources */,
 				05DF1F2617CD338E00E3B321 /* spark.png in Resources */,
+				05AE47FD17F4CFA000A40A21 /* Spawn.sks in Resources */,
 				05DF1EFD17CD2CAE00E3B321 /* Main_iPad.storyboard in Resources */,
 				0563E6BE17DC9BC8002A5D57 /* Suspense.wav in Resources */,
 				0563E6BC17DC9A81002A5D57 /* SmallExplosion.wav in Resources */,

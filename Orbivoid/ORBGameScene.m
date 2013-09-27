@@ -86,6 +86,14 @@
     [self addChild:enemy];
     [enemy didMoveToParent];
     
+    SKPhysicsBody *body = enemy.physicsBody; enemy.physicsBody = nil;
+    enemy.alpha = 0;
+    
+    [SKAction sequence:@[
+        
+    ]];
+    
+    
     [self runAction:[SKAction playSoundFileNamed:@"Spawn.wav" waitForCompletion:NO]];
     
     return enemy;
