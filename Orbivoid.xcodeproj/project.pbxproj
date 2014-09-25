@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		054B583619D41E8700C3E492 /* SKEmitterNode+ORBFileLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 054B583519D41E8700C3E492 /* SKEmitterNode+ORBFileLoading.m */; };
 		05A333B417D36A1900E4BBF7 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B317D36A1900E4BBF7 /* Explosion.sks */; };
 		05A333B617D36D2200E4BBF7 /* Explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05A333B517D36D2200E4BBF7 /* Explosion.wav */; };
 		05A333B917D36FD500E4BBF7 /* ORBMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		054B583419D41E8700C3E492 /* SKEmitterNode+ORBFileLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKEmitterNode+ORBFileLoading.h"; sourceTree = "<group>"; };
+		054B583519D41E8700C3E492 /* SKEmitterNode+ORBFileLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKEmitterNode+ORBFileLoading.m"; sourceTree = "<group>"; };
 		05A333B317D36A1900E4BBF7 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		05A333B517D36D2200E4BBF7 /* Explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Explosion.wav; sourceTree = SOURCE_ROOT; };
 		05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORBMenuScene.h; sourceTree = "<group>"; };
@@ -149,6 +152,8 @@
 				05DF1F0217CD2CAE00E3B321 /* ORBGameScene.m */,
 				05A333B717D36FD500E4BBF7 /* ORBMenuScene.h */,
 				05A333B817D36FD500E4BBF7 /* ORBMenuScene.m */,
+				054B583419D41E8700C3E492 /* SKEmitterNode+ORBFileLoading.h */,
+				054B583519D41E8700C3E492 /* SKEmitterNode+ORBFileLoading.m */,
 				05B8370017CD46970059C67D /* CGVector+TC.h */,
 				05DF1F2317CD338E00E3B321 /* Trail.sks */,
 				05DF1F2417CD338E00E3B321 /* spark.png */,
@@ -299,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05DF1F0017CD2CAE00E3B321 /* ORBViewController.m in Sources */,
+				054B583619D41E8700C3E492 /* SKEmitterNode+ORBFileLoading.m in Sources */,
 				05DF1EF717CD2CAE00E3B321 /* ORBAppDelegate.m in Sources */,
 				05DF1F0317CD2CAE00E3B321 /* ORBGameScene.m in Sources */,
 				05DF1EF317CD2CAE00E3B321 /* main.m in Sources */,

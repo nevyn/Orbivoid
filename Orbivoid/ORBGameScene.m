@@ -32,7 +32,7 @@ enum {
         
         self.backgroundColor = [SKColor blackColor];
         
-        self.physicsWorld.gravity = CGPointMake(0, 0);
+        self.physicsWorld.gravity = CGVectorMake(0, 0);
         self.physicsWorld.contactDelegate = self;
         
         _enemies = [NSMutableArray new];
@@ -192,11 +192,3 @@ enum {
 }
 
 @end
-
-@implementation SKEmitterNode (fromFile)
-+ (instancetype)orb_emitterNamed:(NSString*)name
-{
-    return [NSKeyedUnarchiver unarchiveObjectWithFile:[[NSBundle mainBundle] pathForResource:name ofType:@"sks"]];
-}
-@end
-
